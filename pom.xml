@@ -64,8 +64,11 @@
 		<dependency>
 			<groupId>org.flywaydb</groupId>
 			<artifactId>flyway-core</artifactId>
+			<version>9.8.1</version>
 		</dependency>
 	</dependencies>
+
+
 
 	<build>
 		<plugins>
@@ -79,6 +82,9 @@
 							<artifactId>lombok</artifactId>
 						</path>
 					</annotationProcessorPaths>
+					<source>23</source>
+					<target>23</target>
+<!--					<compilerArgs>&#45;&#45;enable-preview</compilerArgs>-->
 				</configuration>
 			</plugin>
 			<plugin>
