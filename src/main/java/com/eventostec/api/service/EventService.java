@@ -53,7 +53,8 @@ public class EventService
     {
         Pageable pageable = PageRequest.of(page, size);
         Page<Event> eventsPage = this.eventRepository.findAll(pageable);
-        return eventsPage.map(event -> new EventResponseDTO(event.getId(), event.getTitle(), event.getDescription(), event.getDate(), "", "", event.getRemote(), event.getEventUrl(), event.getImgUrl()));
+        return eventsPage.map(event -> new EventResponseDTO(event.getId(), event.getTitle(), event.getDescription(), event.getDate(), "", "", event.getRemote(), event.getEventUrl(), event.getImgUrl()))
+                .stream().toList();
     }
 
     private String uploadImg(MultipartFile multipartFile) {
