@@ -19,7 +19,7 @@ public interface EventRepository extends JpaRepository<Event, UUID> {
             "WHERE (:title = '' OR e.title LIKE %:title%)" +
             "(:city = '' OR e.city LIKE %:city%) " +
             "(:uf = '' OR e.uf LIKE %:uf%) " +
-            "AND (:Date >= :startDate AND e.date <= :endDate")
+            "AND (:Date >= :startDate AND e.date <= :endDate"   )
     Page<Event> findFilteredEvents(@Param("title") String title,
                                    @Param("city") String city,
                                    @Param("uf") String uf,
